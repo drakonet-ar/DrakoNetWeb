@@ -1,0 +1,389 @@
+:root {
+    --primary: #00fff2;
+    --secondary: #ff00ff;
+    --background: #0a0a0f;
+    --grid-color: rgba(0, 255, 242, 0.1);
+}
+
+/***************************************************************************************************/
+/* Estilos generales para el scrollbar */
+::-webkit-scrollbar {
+    width: 12px; 
+}
+/* Estilos para el track (fondo del scrollbar) */
+::-webkit-scrollbar-track {
+    background: linear-gradient(#fff2, transparent); 
+    border-radius: 10px; 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25); 
+}
+/* Estilos para el thumb (la parte que se arrastra) */
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3); 
+    border-radius: 10px; 
+    backdrop-filter: blur(5px); 
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    transition: background 0.3s ease-in-out; 
+}
+/* Hover sobre el thumb */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5); /* Color más claro al hacer hover */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    height: 1000px;
+    line-height: 1.6;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px) 0 0 / 50px 50px,
+        linear-gradient(0deg, var(--grid-color) 1px, transparent 1px) 0 0 / 50px 50px;
+    animation: gridMove 20s linear infinite;
+    pointer-events: none;
+    z-index: -2;
+}
+
+@keyframes gridMove {
+    0% {
+        transform: perspective(500px) rotateX(60deg) translateY(0);
+    }
+
+    100% {
+        transform: perspective(500px) rotateX(60deg) translateY(50px);
+    }
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%,
+            transparent 0%,
+            var(--background) 80%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    animation: float 20s linear infinite;
+    opacity: 0;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) translateX(-50px);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100px) translateX(100px);
+        opacity: 0;
+    }
+}
+/*
+@keyframes float {
+    0% {
+        transform: translateY(-100px) translateX(-50px);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) translateX(100px);
+        opacity: 0;
+    }
+}*/
+
+header{
+    width: 100%;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    
+}
+
+header .logo-header{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .logo-header img{
+    width: 50%;
+}
+
+header h2{
+    font-size: 1em;
+    font-family: 'Poppins';
+    letter-spacing: 5px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.contenedor-arrow-back{
+    width: 55px;
+    height: 100px;
+    position: absolute;
+    right: 2%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins';
+    letter-spacing: 2px;
+    text-align: center;
+    white-space: nowrap;
+    color: #fff;
+    text-decoration: none;
+}
+
+.come-back{
+    font-size: 1.2em;
+}
+
+
+.contenedor-titulo{
+    z-index: 1;
+    width: 100%;
+    height: 400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    box-shadow: 0px 10px 10px rgba(255, 255, 255, 0.1);
+}
+
+.glow-text {
+    font-size: clamp(2.5rem, 8vw, 3rem);
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    letter-spacing: 5px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.contenedor-titulo .logo{
+    position: relative;
+    top: 5%;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.contenedor-titulo .logo img{
+    width: 100%;
+}
+
+.contenedor-titulo p{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.parrafo1{
+    width: 60%;
+}
+.parrafo2{
+    width: 30%;
+}
+
+.contenedor-titulo form{
+    margin-top: 2%;
+}
+
+
+#main {
+    width: 100%;
+    height: 1600px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+
+.glass {
+    background: linear-gradient(#fff1, transparent );
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+
+.contenedor-articulo-back{
+    width: 80%;
+    height: 1500px;
+    position: absolute;
+}
+
+.contenedor-articulo
+{
+    width: 84%;
+    height: 1500px;
+    position: relative;
+}
+
+.article{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+    filter: drop-shadow(none);
+}
+
+.banner-article{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.banner-article img{
+    width: 100%;
+    object-fit: contain; /* Mantiene la proporción de la imagen y se ajusta dentro del contenedor */
+    margin-top: -235px;
+}
+
+.article h3{
+    font-family: 'Poppins';
+    font-size: 2em;
+    margin-bottom: 25px;
+}
+
+/*****************************************************************************************************************************************/
+/*****************************************************************************************************************************************/
+/*FOOTER*/
+footer {
+    position: absolute;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px 0;
+    z-index: 10;
+    margin-top: 50px;
+    filter: drop-shadow(2px 2px 10px var(--primary));
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.social-media a {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-media a:hover {
+    transition: 0.5s ease-in-out;
+    filter: drop-shadow(2px 2px 10px var(--secondary));
+}
+
+#newsletter-form {
+    display: flex;
+}
+
+#newsletter-form input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+#newsletter-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+}
+
+#buttom-newsletter:hover{
+    filter: drop-shadow(2px 2px 10px var(--secondary));
+}
+
+.fondo-footer{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 25px;
+    font-family: 'Poppins';
+    font-size: 0.6em;
+    color: #fff;
+}
