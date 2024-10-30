@@ -163,9 +163,22 @@ h2{
     font-size: 0.8em;
     color: #fff;
     text-align: center;
-    margin-top: -15px;
+    margin: 0;
 }
 
+.leermas {
+    opacity: 0;
+    display: inline;
+    color: red;
+    transition: opacity 0.3s ease;
+}
+
+/* Aparecerá con opacidad 1 en pantallas pequeñas */
+@media (max-width: 1020px) {
+    .leermas {
+        opacity: 1;
+    }
+}
 
 .appear-container{
     margin-top: 1300px;
@@ -233,7 +246,7 @@ h2{
 }
 #newsletter-form2 {
     display: flex;
-    margin-top: -50px;
+    margin: 0;
 }
 
 #newsletter-form2 input {
@@ -533,7 +546,8 @@ footer {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 20px 0;
     z-index: 10;
-    margin-top: 50px;  
+    margin-top: 50px;
+    height: 60px;  
 }
 
 .footer-content {
@@ -593,6 +607,7 @@ footer {
     font-family: 'Poppins';
     font-size: 0.6em;
     color: #fff;
+    margin-top: 10px;
 }
 
 /***************************************************************************************************************************************/
@@ -638,25 +653,38 @@ footer {
     }
 
     #container-info1{
-        margin-top: 1300px!important;
+        margin-top: 1000px!important;
+        height: 300px;
+        font-size: 1.4em;
+        transition: 0.7s ease;
     }
 
     #container-info2{
-        margin-top: 2500px!important;
+        margin-top: 1900px!important;
         width: 90%!important;
+        transition: 0.7s ease;
+    }
+
+    #about-tittle{
+        font-size: 1.5em;
+    }
+
+    #contact-tittle{
+        font-size: 2em;
     }
 
     #container-info3{
-        margin-top: 6580px!important;
+        margin-top: 5900px!important;
         width: 85%!important;
         height: 1100px;
         opacity: 1;
-        
+        transition: 0.7s ease;
     }
 
 
     #container-info3 h3{
         text-align: center;
+        font-size: 2em;
     }
 
     #cross1{
@@ -716,7 +744,8 @@ footer {
 /*****************************************************************************************************************************************/
 /*****************************************************************************************************************************************/
     footer {
-        margin-top: 2440px;
+        margin-top: 2080px;
+        height: 110px;
     }
 
     .footer-content {
@@ -726,5 +755,6 @@ footer {
     .social-media {
         margin-bottom: 20px;
     }
+
 
 }
